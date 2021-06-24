@@ -8,50 +8,7 @@
  import java.util.*;
  public class Challenge
  {
-   //declare instance variables
-   //decalre an integer array of size 10 which will store generated numbers
-   int array[];
-   int randomNumbers;
-   //default constructor to inialize variables
-   public Challenge()
-   {
-      this.array = new int[10];
-      this.randomNumbers = randomNumbers;
-   }
-   //randomNumberGenerator() method which generates 10 random numbers of range 0-100
-   //the method then adds the random numbers to an array
-   public void randomNumberGenerator()
-   {
-      //random generator function
-      Random number = new Random();
-      
-      //a for loop to generate 10 random numbers
-      //every random number generated is added to the array until its full
-      for(int i=0; i < array.length;i++)
-      {
-         //generate numbers between 0 and 100
-         randomNumbers = number.nextInt(100);
-         //adding random numbers to the array
-         array[i] = randomNumbers;
-      }
-      
-   }
-   //factorial () method which computes factorial
-   //it takes in a number and computes its factorial
-   public int factorial(int sum)
-   {    
-     if (sum == 0) 
-     {
-         //since 0 factorial is 1   
-       return 1;
-     }    
-     else 
-     {
-         int factorialNumber = sum * factorial(sum-1);
-       return factorialNumber;
-     }   
-       
-   } 
+    
    //boollean search() method allows a user to input two numbers
    //The numbers are then searched in the array of random numbers
    //if they either of them do not exist or both of them do not exist it returns false
@@ -60,8 +17,10 @@
     
    public boolean search(int num1,int num2)
    {
+        //creating a factorial class object
+        Factorial obj = new Factorial();
       //for loop to traverse the array
-      
+    
       boolean found = false;
       for(int i=0;i < array.length;i++)
       {
@@ -72,7 +31,7 @@
                if(array[j] == num2)
                {
                   int sum = num1 + num2;
-                  factorial(sum);
+                  obj.factorial(sum);
                   found = true;
                   
                }
@@ -82,15 +41,7 @@
       return found;
       
    }
-   //display() method to print the contents of the array
-   public void display()
-   {
-      
-      for(int i=0;i < array.length;i++)
-      {
-         System.out.println(array[i]);
-      }
-   }
+  
    //main method to test the above methods 
    public static void main(String [] args)
    {
